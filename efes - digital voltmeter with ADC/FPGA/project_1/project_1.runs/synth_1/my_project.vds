@@ -1,0 +1,363 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Thu Dec 12 13:53:16 2024
+# Process ID: 2300
+# Current directory: X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/project_1/project_1.runs/synth_1
+# Command line: vivado.exe -log my_project.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source my_project.tcl
+# Log file: X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/project_1/project_1.runs/synth_1/my_project.vds
+# Journal file: X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/project_1/project_1.runs/synth_1\vivado.jou
+# Running On        :DESKTOP-D8FGB83
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22631
+# Processor Detail  :11th Gen Intel(R) Core(TM) i9-11900H @ 2.50GHz
+# CPU Frequency     :2496 MHz
+# CPU Physical cores:8
+# CPU Logical cores :16
+# Host memory       :68425 MB
+# Swap memory       :4294 MB
+# Total Virtual     :72720 MB
+# Available Virtual :58973 MB
+#-----------------------------------------------------------
+source my_project.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 530.289 ; gain = 201.199
+Command: read_checkpoint -auto_incremental -incremental {X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/project_1/project_1.srcs/utils_1/imports/synth_1/my_project.dcp}
+INFO: [Vivado 12-5825] Read reference checkpoint from X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/project_1/project_1.srcs/utils_1/imports/synth_1/my_project.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top my_project -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+WARNING: [Vivado_Tcl 4-1809] The reference checkpoint is from an old version of Vivado; A full resynthesis flow will be run
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Device 21-9227] Part: xc7z020clg400-1 does not have CEAM library.
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 11164
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1416.914 ; gain = 449.059
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'my_project' [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/my_project.vhd:25]
+INFO: [Synth 8-3491] module 'SPI_Master' declared at 'X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Master.vhd:5' bound to instance 'master_uint' of component 'SPI_Master' [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/my_project.vhd:69]
+INFO: [Synth 8-638] synthesizing module 'SPI_Master' [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Master.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'SPI_Master' (0#1) [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Master.vhd:16]
+INFO: [Synth 8-3491] module 'ADC0831' declared at 'X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/ADC0831.vhd:4' bound to instance 'ADC_uint' of component 'ADC0831' [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/my_project.vhd:72]
+INFO: [Synth 8-638] synthesizing module 'ADC0831' [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/ADC0831.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'ADC0831' (0#1) [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/ADC0831.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'my_project' (0#1) [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/my_project.vhd:25]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1530.688 ; gain = 562.832
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 1530.688 ; gain = 562.832
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 1530.688 ; gain = 562.832
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1530.688 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc]
+WARNING: [Vivado 12-584] No ports matched 'Ref_clk'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:1]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:1]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'Ref_clk'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:2]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:2]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PB1'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PB1'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED1'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED2'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED1'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'LED2'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PB2'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PB2'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'spi_cs'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'spi_cs'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'spi_clk'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'spi_clk'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'spi_miso'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:59]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:59]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'spi_miso'. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/Pins.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/my_project_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/my_project_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1640.508 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1640.508 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:21 . Memory (MB): peak = 1640.508 ; gain = 672.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:21 . Memory (MB): peak = 1640.508 ; gain = 672.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:21 . Memory (MB): peak = 1640.508 ; gain = 672.652
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'SPI_Master'
+INFO: [Synth 8-802] inferred FSM for state register 'FSM_reg' in module 'ADC0831'
+INFO: [Synth 8-802] inferred FSM for state register 'write_reg' in module 'my_project'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                             0001 |                               00
+                    load |                             0010 |                               01
+                    send |                             0100 |                               10
+                complete |                             1000 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'SPI_Master'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                              000 |                              000
+                  tsetup |                              001 |                              001
+                   read1 |                              010 |                              010
+                   read2 |                              011 |                              011
+                    stop |                              100 |                              100
+                  iSTATE |                              101 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'FSM_reg' using encoding 'sequential' in module 'ADC0831'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                               11
+                 iSTATE0 |                               01 |                               00
+                 iSTATE1 |                               10 |                               01
+*
+                 iSTATE2 |                               11 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'write_reg' using encoding 'sequential' in module 'my_project'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:23 . Memory (MB): peak = 1640.508 ; gain = 672.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 6     
+	   2 Input    9 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 6     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 3     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 12    
++---Muxes : 
+	   2 Input    9 Bit        Muxes := 3     
+	   6 Input    9 Bit        Muxes := 3     
+	   2 Input    8 Bit        Muxes := 3     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   4 Input    5 Bit        Muxes := 1     
+	   6 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	   5 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	   3 Input    2 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 5     
+	   2 Input    1 Bit        Muxes := 22    
+	   4 Input    1 Bit        Muxes := 10    
+	   3 Input    1 Bit        Muxes := 6     
+	   6 Input    1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 1640.508 ; gain = 672.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:37 . Memory (MB): peak = 1640.508 ; gain = 672.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:37 . Memory (MB): peak = 1640.508 ; gain = 672.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:37 . Memory (MB): peak = 1640.508 ; gain = 672.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:44 . Memory (MB): peak = 1640.508 ; gain = 672.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:44 . Memory (MB): peak = 1640.508 ; gain = 672.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:44 . Memory (MB): peak = 1640.508 ; gain = 672.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:44 . Memory (MB): peak = 1640.508 ; gain = 672.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:44 . Memory (MB): peak = 1640.508 ; gain = 672.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:44 . Memory (MB): peak = 1640.508 ; gain = 672.652
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    48|
+|3     |LUT1   |     3|
+|4     |LUT2   |    24|
+|5     |LUT3   |    17|
+|6     |LUT4   |    44|
+|7     |LUT5   |    43|
+|8     |LUT6   |    48|
+|9     |FDRE   |   275|
+|10    |FDSE   |     6|
+|11    |IBUF   |     4|
+|12    |IOBUF  |     8|
+|13    |OBUF   |    15|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:44 . Memory (MB): peak = 1640.508 ; gain = 672.652
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:41 . Memory (MB): peak = 1640.508 ; gain = 562.832
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:44 . Memory (MB): peak = 1640.508 ; gain = 672.652
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1640.508 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 56 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1640.508 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 8 instances
+
+Synth Design complete | Checksum: 1c0e0a2c
+INFO: [Common 17-83] Releasing license: Synthesis
+36 Infos, 20 Warnings, 18 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:52 . Memory (MB): peak = 1640.508 ; gain = 1103.457
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1640.508 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'X:/1 Learning/1 Polito Master/2 Elec Course/report/datasheets + code/vhdl/mohsen/project_1/project_1.runs/synth_1/my_project.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file my_project_utilization_synth.rpt -pb my_project_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 12 13:54:22 2024...
