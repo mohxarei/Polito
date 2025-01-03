@@ -26,13 +26,12 @@ Uncomment to import the libraries that you need
 int main (void)
 {  
 	// Uncomment the instructions (and add others) according to your needs
-	LED_init();					/* LED Initialization */
+	LED_init();				/* LED Initialization */
 	BUTTON_init();				/* BUTTON Initialization */
 	init_timer(1,0xFF);			/* TIMER1 Initialization */ //MR0=0xff //reset counting when TC=MR0 // no stop no INT
-	enable_timer(1);				/* number of timer need to enable */
+	enable_timer(1);			/* number of timer need to enable */
 	while(1);
 	
-
 	// LPC_SC->PCON |= 0x1;	/* power-down mode */								
 	// LPC_SC->PCON &= 0xFFFFFFFFD; 
 	// SCB->SCR |= 0x2;				/* set SLEEPONEXIT */	
