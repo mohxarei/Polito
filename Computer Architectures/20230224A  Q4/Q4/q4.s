@@ -124,13 +124,12 @@ ENDFORI
 ;R0=7530-0357
 				SUB R0,R2,R6
 				
-				
-				
 
-				
 				
 				
 				POP{R4-R11, PC}
 				ENDP
 					
 				END
+
+;i know it's not too much efficient. but works :)
