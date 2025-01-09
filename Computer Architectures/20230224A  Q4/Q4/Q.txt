@@ -1,0 +1,24 @@
+Write the KaprekarRoutine subroutine, which receives in input a 32-bit unsigned number a,
+ranging between 1000 and 9999. The subroutines implements the following tasks:
+-	it computes a new number b by sorting the digits of a by descending order
+-	it computes a new number c by sorting the digits of a by ascending order
+-	it returns d = b - c
+
+Example: a = 3075
+
+The subroutine computes b = 7530 and c = 0357.
+The returning value is d = 7530 – 357 = 7173.
+
+You can obtain the digits of a number (from the least significant to the most significant)
+by repeatedly dividing by 10 and taking the remainder. For example:
+3075 / 10 = 307 with remainder 5
+307 / 10 = 30 with remainder 7
+30 / 10 = 3 with remainder 0
+3 / 10 = 0 with remainder 3
+
+After sorting the digits, you can build the new numbers b and c by repeated multiplication by 10.
+In the previous example, the digits in descending order are 7, 5, 3, 0. You can build b as follows:
+-	first iteration: b = 7
+-	second iteration: b = 7 * 10 + 5 = 75
+-	third iteration: b = 75 * 10 + 3 = 753
+-	fourth iteration: b = 753 * 10 + 0 = 7530

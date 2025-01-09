@@ -1,0 +1,240 @@
+ARMcoretex-m3 use Thumb-2: which means 16 or 32 bit Instruction Set Architecture
+
+each REGISTER is 32 bit (4Byte) : R0 to R15(general) + xPSR(special) + CONTROL
+
+R13 -> stack pointer(SP,MSP,PSP): Address of top stack used for temp data... in memory
+R14 -> Link Register(LR): Store return address of program after functions calling
+R15 -> Program Counter(PC): Address of next instructor currently to be executed
+xPSR -> shows FLAGS from alu unit + some more, like intruupts(based on NestedVectorTable/DCD 4byte) and so on
+CONTROL -> determind MOOD and ACCESS LEVEL (in exeptions and SVC)--->ARM07 session
+
+...........................by pressing power program goes to Reset_Handler / everything starts from there.........................................
+
+AREA name(|.text|), CODE(or DATA), READONLY(or READWRITE) -----> for any work by memory or subroutines
+
+subroutines		PROC
+
+STOP			B	STOP //or (B	.) is like while(1) in C/ holds program here
+				ENDP
+				
+				END	...........> final end for any file or any external subroutine
+				
+.................................................DIRECTIVES......................................................
+
+AREA xyz, DATA, READONLY ------> Type of memory used ...... DATA: only for memory		RAEDWRITE/READONLY
+															CODE: for your code			READONLY (defult)
+
+xyz RN 0 ----------------------> naming a Register (R0)
+Milion EQU 1000000 ------------> Defining constant / name to numbers
+
+***each memory cells are 1byte(8 bit)************each Hex is 4bit, so in 1 cell of memory can put 2hex number***
+***if data is more than 1byte..store reverse(little indian) in the memory****
+**** 1 -> decimal / 2_1010-> binary / 8_657 -> octal / 0xFF76 -> HEXadecimal: means each number is 4 bit --- 0x00 00 00 00:32bit 
+
+memory allocation:(saving some values in memory by specefic name and format) --------------- need to write in DATA, READONLY!!
+			DCB  --> aligned 1byte(8bit) each
+			DCW  --> aligned 2byte(16 bit) each 	--> always form x2 cells of mem --> each element reserve 2cell(2byte) of memory, even it is zero (little indian!!)
+			DCWU --> unaligned 2byte			-->	solve align 
+            DCD  --> always form x4 cells of mem --> aligned 4byte (32bit) each vlue
+			DCDW --> unaligned 4byte
+			
+name        DCD 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07			
+			LDR R0,=name
+this datas Need to be called in CODE area like, LDR r0, =name ****** r0 is first byte of address of myData in mem
+
+name	SPACE 28  --> directive reserves a zeroed block of memory; 7*4 byte ------------ can be READONLY/READWRITE
+
+
+.................................................MEMORY......................................................
+
+LDR R1, [R0] --> loadin 4 byte from R0 address in mem putting on R1 (strats from LSB on R1)
+LDRB --> load 1byte
+LDRH --> 2byte --> 0x22,0x67 --> R1= 0x67 22
+LDRSB --> 1signedbyte (if sign bit is 1 putt FFFF(1) befor / if 0 put 0)
+LDRSH --> 2signedbyte
+
+STR R1, [R0] --> storing 4 byte value of R1 in R0 in mem(as starting point) address
+STRB --> store 1byte
+STRH --> store 2byte
+
+********** MOV cant use ADDRESS of mem, or more than 32bit values, so we use LDR to load value from mem ([]) or constants on Registers: LDR R1, =0x3458***********
+lookupTable:
+		name    DCB 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07
+		LDR R0, =name --> Load base address of lookup table in r0
+		
+				
+.................................................ADDRESSING(for LDR and STR):
+
+preIndex:First update offset ... Reg or Imm, Then access the mem <Rn>
+		if R0 as address of mem is 0x00008000, at the end will be same
+		LDR r2, [r0]
+		LDR r3, [r0, #4] 	--> 4byte far from start
+		LDR r4, [r0, #8]	--> 8byte far from start
+		LDR r5, [r0, #12]	--> 12byte far from start
+
+		by using writeback (!), address will be updated after each instruction
+		LDR r2, [r0]
+		LDR r3, [r0, #4]!
+		LDR r4, [r0, #4]!
+		LDR r5, [r0, #4]!
+*** # can be Imm, Register or LSL even! (LDR r4, [r0, r1, LSL #1])
+
+PostIndex: First access mem <Rn>, Then update offset
+		LDR r2, [r0], #4	--> after loading r0 position updated 4byte next
+		LDR r3, [r0], #4
+		LDR r4, [r0], #4
+		LDR r5, [r0], #4
+		R0 starts from 0x00008000, at the end R0 is 0x00008010 (4x4byte)
+		
+.................................................ALU......................................................
+
+MRS R0, CONTROL --> copies a special register into a register
+MSR CONTROL, R0 --> copies a general purpose register into a special register
+
+ADD R0,R1 				--> R0 = R0 + R1
+SUB R0,R1,R2			--> R0 = R1 - R2
+SUB r0, r1, r2, LSL #2 	--> r0 = r1 - r2*4
+
+RSB R0,R1,R2			--> R0 = R1 - R2
+RSB r0, r2, r1, LSL #2 	--> r0 = r1*4 - r2
+//(by adding S at the end, flags change)////////////flags can change by CMP, ALU(+s)/////////////////
+//after CMP any flags can be added to instrudtions: ADDNE / STRBGT or so on//////////////////////////
+
+MUL R0, R1, R2			--> R0 = R0 * R1
+UDIV R0, R1, R2			--> R0 = R0 / R1
+(not changing flags)
+
+LSL R0, R1, #2			--> R0 = R1 X (#1:x2 / #2:x4 / #3:x8)
+LSR R0, R1, #2
+
+bitwise operands:
+AND R0, R1, R2 			--> R0 = R1 AND R2
+BIC R0, R1, R2 			--> R0 = R1 AND NOT R2
+ORR R0, R1, R2 			--> R0 = R1 OR R2
+EOR R0, R1, R2 			--> R0 = R1 XOR R2
+ORN R0, R1, R2 			--> R0 = R1 OR NOT R2
+MVN R0, R1 					-->	R0 = NOT R1
+
+.................................................BRANCHES......................................................
+B <label>
+BX <Rn>			--> works with loaded address of lable to Rn/ LDR Rn, =label (or ADRL Rn, label)
+BL <label>		-->	for calling suroutines
+BLX <Rn>		--> BLX and BL save the return address on LR(r14)
+
+stop: while(1)
+stop B stop		/				LDR r1, =stop			/ B		.
+						stop    BX r1
+
+********************************COMPARES / after them need to use branches BEQ label/ BNE label; or stick them to other instructions: ADDNE / STRBGT or so on************************
+CMP R0, #10 	--> if R0-10 = 0 (Z set)
+CMN R0, #10 	--> if R0+10 = 0 (Z set)
+TST R1, #0x01 	--> if R1 AND #0x01 = 0 (set Z flag). (R1 is even/fard)
+TEQ R1, #0x01	--> if R1 XOR #0x01 = 0 (set Z flag). (R1 is odd/zoj)
+BRANCHES are coming after them/ after B or ALU or MOV/MVN
+
+CBZ <Rn>, <label>	--> jumps to label if Rn= 0
+						CMP r0, #0
+						BEQ myLabel	
+CBNZ <Rn>, <label>	-->	jumps to label if Rn !=0
+						CMP r0, #0
+						BNE myLabel
+////CMPsets the flags, whileCBZand CBNZdo not
+						
+BRANCHES:
+AL		--> always
+EQ		--> if =
+NE		--> !=(notEqual)
+
+MI		--> -(negative)
+PL		--> positive or 0
+VS		--> overflow
+VC		--> noOverflow
+
+HI		--> > (us)
+CS/HS	-->	>= 
+CC/LO	--> <
+LS		--> <=
+
+GT		--> > (signed)
+GE		--> >= (signed)
+LT		--> < (signed)
+LE		--> <= (signed)
+
+******branches are coming after CMP, by B.. or after ALU instructions*******
+
+WHILE(R1>R2)	{DO}:		+_+_+_+_in while-do conditions are opposite+_+_+_+_+_+
+
+WHILE	CMP R1, R2
+		BLS ENDWHILE	;break the while if opposite(R1<=R2), otherwise stay here (B WHILE)
+		...
+		..
+		DO
+		..
+		...
+		B	WHILE
+ENDWHILE
+-------------------
+{DO}	WHILE(R1=R1):
+
+WHILE	...
+		..
+		DO
+		...
+		..
+		CMP R1, R2
+		BEQ	WHILE	;while R1=R2 repeat cyrcle
+
+-------------------------------------------------
+for(i=0:i<=7;i++) instructor:
+
+	MOV R4,R2		;R4=7 (making FOR's index)
+FOR	
+	...
+	..
+	...
+
+	SUB R4,#1		;R4 -1
+	CMP R4,#0		;
+	BNE FOR			;if R4!=0 go to FOR if R4=0 left the loop
+					;(this for 7time runs)
+
+----------------------------------------------------------------IT block-----------------------------------------------------
+which is like an if-else..
+
+ITxyz	<branch>			;first condition is always true
+						xyz: can be (up to 3) T or E
+							if T, condition need to be <branch>
+							or E, anything else
+
+****after IT block every instruction (ADD/MOV/LSL/LDR/....) can get branch
+	and by defining T or E can work***************************************
+
+CMP R1,R2
+ITET  EQ
+ADDEQ R1,R2,#4
+LDRNE R2,[R1,#1]
+ADDEQ R2,R3
+....program continues
+___________________________________________________SUBROUTINES________________________________________________
+like functions******R0-R3 can pass data trough subs and C only**********
+ADD .s file to project fill as blow:
+(in RESET_HANDLER do: IMPORT subname; after first EXPORT)
+
+				AREA xyz,CODE,READONLY
+subname		 	PROC				
+				EXPORT subname	;for calling on reset_handler
+				PUSH{R4-R11,LR}	;keeping values and LR/PC safe in stack, then POPing them					***each elements of stack is 4byte
+				..
+				..
+				POP{R4-R11,PC}	;Contain value of LR / MOV PC, LR
+				ENDP
+				
+				END			;final end in each file
+*********in C or statup.s determine given value to subname before calling it*******							LDR R0,=xyz / LDR R1, #N
+				in startup.s SUBROUTINE need to defined outside of resetHandler's end, and called by:		BL	subname
+
+
+
+
+
+
