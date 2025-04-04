@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Wed Feb 26 04:11:54 2025
+# Process ID: 14244
+# Current directory: X:/1 Learning/1 Polito Master/2 Elec Course/report/Report/output/Desktop/vhdl/project_1/project_1.runs/impl_1
+# Command line: vivado.exe -log my_project.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source my_project.tcl -notrace
+# Log file: X:/1 Learning/1 Polito Master/2 Elec Course/report/Report/output/Desktop/vhdl/project_1/project_1.runs/impl_1/my_project.vdi
+# Journal file: X:/1 Learning/1 Polito Master/2 Elec Course/report/Report/output/Desktop/vhdl/project_1/project_1.runs/impl_1\vivado.jou
+# Running On        :DESKTOP-D8FGB83
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26100
+# Processor Detail  :11th Gen Intel(R) Core(TM) i9-11900H @ 2.50GHz
+# CPU Frequency     :2496 MHz
+# CPU Physical cores:8
+# CPU Logical cores :16
+# Host memory       :68425 MB
+# Swap memory       :4294 MB
+# Total Virtual     :72720 MB
+# Available Virtual :48089 MB
+#-----------------------------------------------------------
+source my_project.tcl -notrace

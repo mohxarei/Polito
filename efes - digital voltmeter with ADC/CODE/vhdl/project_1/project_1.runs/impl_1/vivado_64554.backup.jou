@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Thu Feb 20 20:27:27 2025
+# Process ID: 64554
+# Current directory: /home/saman/Desktop/vhdl/mohsen/project_1/project_1.runs/impl_1
+# Command line: vivado -log my_project.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source my_project.tcl -notrace
+# Log file: /home/saman/Desktop/vhdl/mohsen/project_1/project_1.runs/impl_1/my_project.vdi
+# Journal file: /home/saman/Desktop/vhdl/mohsen/project_1/project_1.runs/impl_1/vivado.jou
+# Running On        :saman-HP-Pavilion-Laptop-15-eg2xxx
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 24.04.2 LTS
+# Processor Detail  :12th Gen Intel(R) Core(TM) i7-1255U
+# CPU Frequency     :399.650 MHz
+# CPU Physical cores:10
+# CPU Logical cores :12
+# Host memory       :16421 MB
+# Swap memory       :4294 MB
+# Total Virtual     :20716 MB
+# Available Virtual :16332 MB
+#-----------------------------------------------------------
+source my_project.tcl -notrace

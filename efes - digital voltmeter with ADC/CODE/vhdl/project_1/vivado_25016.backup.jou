@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Wed Feb 26 10:06:58 2025
+# Process ID: 25016
+# Current directory: X:/1 Learning/1 Polito Master/2 Elec Course/report/Report/output/Desktop/vhdl/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21140 X:\1 Learning\1 Polito Master\2 Elec Course\report\Report\output\Desktop\vhdl\project_1\project_1.xpr
+# Log file: X:/1 Learning/1 Polito Master/2 Elec Course/report/Report/output/Desktop/vhdl/project_1/vivado.log
+# Journal file: X:/1 Learning/1 Polito Master/2 Elec Course/report/Report/output/Desktop/vhdl/project_1\vivado.jou
+# Running On        :DESKTOP-D8FGB83
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26100
+# Processor Detail  :11th Gen Intel(R) Core(TM) i9-11900H @ 2.50GHz
+# CPU Frequency     :2496 MHz
+# CPU Physical cores:8
+# CPU Logical cores :16
+# Host memory       :68425 MB
+# Swap memory       :4294 MB
+# Total Virtual     :72720 MB
+# Available Virtual :63977 MB
+#-----------------------------------------------------------
+start_guiopen_project {X:/1 Learning/1 Polito Master/2 Elec Course/report/Report/output/Desktop/vhdl/project_1/project_1.xpr}
+update_compile_order -fileset sources_1
+
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {X:/1 Learning/1 Polito Master/2 Elec Course/report/Report/output/Desktop/vhdl/project_1/project_1.runs/impl_1/my_project.bit} [get_hw_devices xc7z020_1]
+current_hw_device [get_hw_devices xc7z020_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z020_1] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {X:/1 Learning/1 Polito Master/2 Elec Course/report/Report/output/Desktop/vhdl/project_1/project_1.runs/impl_1/my_project.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
